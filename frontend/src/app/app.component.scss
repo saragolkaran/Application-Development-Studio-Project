@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css');
+
+$brand-primary: rgb(26, 100, 156);
+$brand-grey: rgb(237, 236, 243); 
+$brand-success: rgb(19, 194, 104);
+
+html,
+body { 
+    font-family: 'IBM Plex Sans', serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: $brand-grey;
+}
+
+.topNav {
+    border-top: 2px solid $brand-primary;
+    height: 75px;
+    background-image: linear-gradient( 125deg, $brand-grey 10%, #ffffff 100%);
+    border-bottom: 1px solid $brand-grey;
+    .fa-user-circle {
+        font-size: 1.2rem;
+        margin-right: 10px;
+        color: $brand-primary;
+    }
+}
+
+.bottomNav {
+    .navbar-item {
+        font-size: 14px;
+        font-weight: 400;
+        padding: 0px 30px;
+        color: rgb(80, 80, 80)!important;
+        &:hover {
+            border-bottom: 2px solid $brand-primary;
+            background-color: white!important;
+            color: #1b659e!important;
+        }
+        &.is-active {
+            border-bottom: 2px solid $brand-primary;
+            background-color: white!important;
+            color: #1b659e!important;
+            font-weight: 600;
+        }
+    }
+}
+
+.columns {
+    width: 100%;
+    height: 100%;
+}
+
+.shadow {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.04), 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.main {
+    .heading {
+        padding: 20px 0px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-transform: none;
+    }
+    #order {
+        color: #ffffff;
+        strong {
+            color: #ffffff;
+        }
+        article {
+            padding: 12px; 
+            background-color: $brand-primary;
+            border-radius: 5px;
+            &.delivered {
+                background: $brand-success;
+                border-radius: 5px;
+            }
+        }
+        .media-left {
+            font-size: 2rem;
+        }
+        .media-right {
+            line-height: 48px; 
+            padding-top: 11px;
+        }
+        .tag:not(body).is-success {
+            background-color: lighten($color: $brand-primary, $amount: 25);
+        }
+        .tag:not(body).is-delivered {
+            background-color: darken($color: $brand-success, $amount: 10);
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
+.tile .is-child {
+    background: linear-gradient(155deg, rgba(32,45,61,0.8) 0%, rgba(56,75,99,0.8) 100%), url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/vaio_hard_edge.png);
+    background-size: cover;
+    .title, .subtitle {
+        color: white;
+    }
+}  
+
+
+
+/* CIRCLES */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:700,400,300);
+
+$spacing: 1rem;
+$themeColor: #63B8FF;
+$backColor: #ddd;
+$textShadow: rgba(black, 0.35) 1px 1px 1px;
+
+* { box-sizing: border-box; }
+
+
+.progress--circle {
+  position: relative;
+  display: inline-block;
+  margin: $spacing;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: $backColor;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    background-color: $themeColor;
+  }
+}
+
+.progress__number {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  line-height: 1;
+  margin-top: -0.75rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.progress--pie {
+  &:before {
+    display: none; /* Get rid of white circle for "pie chart style" meter */
+  }
+  .progress__number {
+    color: white;
+    text-shadow: $textShadow;
+  }
+}
+
+/**
+* $step is set to 5 by default, meaning you can only use percentage classes in increments of five (e.g. 25, 30, 45, 50, and so on). This helps to reduce the size of the final CSS file. If you need a number that doesn't end in 0 or 5, you can change the text percentage while rounding the class up/down to the nearest 5.
+*/
+$step: 5;
+$loops: round(100 / $step);
+$increment: 360 / $loops;
+$half: round($loops / 2);
+@for $i from 0 through $loops {
+  .progress--bar.progress--#{$i * $step}:after {
+    width: $i * $step * 1%;
+  }
+  .progress--circle.progress--#{$i * $step}:after {
+    @if $i < $half {
+      $nextDeg: 90deg + ($increment * $i);
+      background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextDeg, $themeColor 50%, $backColor 50%, $backColor);
+    }
+    @else {
+      $nextDeg: -90deg + ($increment * ($i - $half));
+      background-image: linear-gradient($nextDeg, $themeColor 50%, transparent 50%, transparent), linear-gradient(270deg, $themeColor 50%, $backColor 50%, $backColor);
+    }
+  }
+}

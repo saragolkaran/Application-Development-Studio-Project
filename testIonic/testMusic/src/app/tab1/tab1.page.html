@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Festival</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+   <!-- <script src="../index.js" type="text/javascript"></script> -->
+  </head>
+  <body>
+    <!--Dataviewer-->
+    <div class="card">
+      <div class="card-body">
+        <form id="basic-data-filter-form" >
+          <div class="form-row">
+            <div class="col-4">
+              <input
+                type="number"
+                key= "performanceId"
+                class="form-control"
+                placeholder="Performance Id"
+              />
+            </div>
+            <div class="col-4 ">
+              <input
+                type="number"
+                key = "festivalId"
+                class="form-control"
+                placeholder="Festival Id"
+              />
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control" placeholder="StartTime" key="startTime__gt" />
+            </div>
+            <div class="col-4 pt-2">
+              <input type="number" class="form-control" placeholder="EndTime" key = "endTime"/>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+          </div>
+        </form>
+        <table class="table mt-3">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Performance Id</th>
+              <th scope="col">Festival Id</th>
+              <th scope="col">StartTime</th>
+              <th scope="col">EndTime</th>
+            </tr>
+          </thead>
+          <tbody id="basic-data-tbody">
+          </tbody>
+        </table>
+        <div class="form-row">
+          <div class="col-10">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" fn='gottoFirstPage'  id="basic-data-first-page" >first</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" id="basic-data-previous-page" fn='changePage' value="-1">Previous</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" id="basic-data-next-page" fn='changePage' value="1">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-1">
+            <select id="basic-data-page-size" fn='changePageSize' class="custom-select">
+              <option  value="5" selected>5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+        <!--Adv Dataviewer-->
+        <div class="card">
+          <div class="card-body">
+            <form id="advance-data-filter-form" >
+              <div class="form-row">
+                <div class="col-4">
+                  <input
+                    type="number"
+                    key= "performanceId"
+                    class="form-control"
+                    placeholder="Performance Id"
+                  />
+                </div>
+                <div class="col-4 ">
+                  <input
+                    type="number"
+                    key = "festivalId"
+                    class="form-control"
+                    placeholder="Festival Id"
+                  />
+                </div>
+                <div class="col-4">
+                  <input type="number" class="form-control" placeholder="StartTime" key="startTime__gt" />
+                </div>
+                <div class="col-4 pt-2">
+                  <input type="number" class="form-control" placeholder="EndTime" key = "endTime"/>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+              </div>
+            </form>
+            <table class="table mt-3">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Performance Id</th>
+                  <th scope="col">Festival Id</th>
+                  <th scope="col">StartTime</th>
+                  <th scope="col">EndTime</th>
+                  <th scope="col">Popularity</th>
+                </tr>
+              </thead>
+              <tbody id="advance-data-tbody">
+              </tbody>
+            </table>
+            <div class="form-row">
+              <div class="col-10">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" fn='gottoFirstPage'  id="advance-data-first-page" >first</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" id="advance-data-previous-page" fn='changePage' value="-1">Previous</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" id="advance-data-next-page" fn='changePage' value="1">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-1">
+                <select id="advance-data-page-size" fn='changePageSize' class="custom-select">
+                  <option  value="5" selected>5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+  </body>
+</html>

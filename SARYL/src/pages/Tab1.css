@@ -1,0 +1,192 @@
+* {
+    font-family: 'Montserrat Regular' !important;
+}
+
+.Body{
+    --ion-background-color:rgb(29, 29, 29);
+}
+.container {
+    padding: 30px;
+  }
+  
+  .container strong {
+    font-size: 35px;
+    line-height: 26px;
+  }
+  
+  .container table {
+    font-size: 16px;
+    line-height: 22px;
+    width: 550px;
+    color: teal;
+    margin: 0;
+    border-collapse: collapse;
+    border: teal solid 2px;
+  }
+  
+  .container th{
+    padding: 10px;
+    border-collapse: collapse;
+    border: teal solid 2px;
+  }
+
+  .containerSearch{
+    align-content: center;
+  }
+
+  td{
+    border-collapse: collapse;
+    border: teal solid 2px;
+    text-align: center;
+  }
+
+  input{
+      border: teal 2px solid;
+      text-align: center;
+      color: #2c2c2c;
+  }
+
+  input:focus{
+      color: #2c2c2c;
+  }
+
+  .spacing{
+      margin-right: 10px;
+  }
+
+  .submitBtn{
+      padding: 5pt;
+      border: teal solid 3px;
+      width: 150px;
+      background-color: transparent;
+      color: white;
+    margin-left: 10px;
+  }
+
+  .searchInput {
+    width: 300px;
+    margin: 5px;
+    border: teal solid 3px;
+  }
+
+  .alignRow{
+    display: inline-block;
+  }
+
+  .selection{
+    border: solid teal 3px;
+    width: 150px;
+  }
+
+  .IonBtn{
+    padding: 5pt;
+    border: teal solid 3px;
+    width: 150px;
+    background-color: transparent;
+    color: white;
+  margin-left: 10px;
+  }
+
+  li{
+      display: inline;
+  }
+
+
+  @media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+
+    * {
+      font-family: 'Montserrat Regular' !important;
+  }
+  
+  .Body{
+      --ion-background-color:rgb(29, 29, 29);
+  }
+  .container {
+      padding: 30px;
+    }
+    
+    .container strong {
+      font-size: 35px;
+      line-height: 26px;
+    }
+    
+    .container table {
+      font-size: 12px;
+      line-height: 22px;
+      width: 140px;
+      color: teal;
+      margin: 0;
+      border-collapse: collapse;
+      border: teal solid 2px;
+    }
+    
+    .container th{
+      padding: 10px;
+      border-collapse: collapse;
+      border: teal solid 2px;
+    }
+  
+    .containerSearch{
+      align-content: center;
+    }
+  
+    td{
+      border-collapse: collapse;
+      border: teal solid 2px;
+      text-align: center;
+    }
+  
+    input{
+        border: teal 2px solid;
+        text-align: center;
+        color: teal;
+    }
+  
+    input:focus{
+        color: #ffffff;
+    }
+  
+    .spacing{
+        margin-right: 10px;
+    }
+  
+    .submitBtn{
+        padding: 5pt;
+        border: teal solid 3px;
+        width: 150px;
+        background-color: transparent;
+        color: white;
+      margin-left: 10px;
+    }
+  
+    .searchInput {
+      width: 300px;
+      margin: 5px;
+      border: teal solid 3px;
+    }
+  
+    .alignRow{
+      display: inline-block;
+    }
+  
+    .selection{
+      border: solid teal 3px;
+      width: 150px;
+    }
+  
+    .IonBtn{
+      padding: 5pt;
+      border: teal solid 3px;
+      width: 150px;
+      background-color: transparent;
+      color: white;
+    margin-left: 10px;
+    }
+  
+    li{
+        display: inline;
+    }
+  
+  }

@@ -1,0 +1,7 @@
+{
+  "name": "SARYL",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
